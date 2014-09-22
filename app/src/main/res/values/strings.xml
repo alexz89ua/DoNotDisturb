@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Quiet</string>
+    <string name="dialog_get_wifi">Choose a WiFi hotspot</string>
+    <string name="trigers_wifi_text">Turn off the sound when connected to WiFi spots:\n %s</string>
+    <string name="trigers_gps_text">Turn off the sound when you are in the area of ​​GPS: \n Coming soon</string>
+    <string name="trigers_time_text">Turn the sound off when the set time comes: \n Coming soon</string>
+</resources>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+
+
+    <Switch
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="16dp"
+            android:text="Sound off when the set time comes:"
+            android:id="@+id/switch1"
+            android:layout_gravity="center_horizontal"/>
+
+    <TextView android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:padding="16dp"
+              android:text="Set time from:"/>
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="12dp"
+        android:gravity="center"
+        android:id="@+id/time_from"
+        android:text="11:00 PM"
+        android:textColor="@android:color/white"
+        android:textSize="28sp"/>
+
+    <TextView android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:padding="16dp"
+              android:text="Set time to:"/>
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="12dp"
+        android:gravity="center"
+        android:id="@+id/time_to"
+        android:text="08:00 AM"
+        android:textColor="@android:color/white"
+        android:textSize="28sp"/>
+
+</LinearLayout>
