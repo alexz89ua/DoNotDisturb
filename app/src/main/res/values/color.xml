@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="hint_transparent">#7F8a877f</color>
+    <color name="hint_transparent">#d4000000</color>
     <color name="hint_color">#8a877f</color>
+    <color name="material_blue">#ff0fb5cb</color>
 </resources>

@@ -5,6 +5,8 @@ import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.TimePickerDialog;
 import android.content.DialogInterface;
+import android.content.Intent;
+import android.support.v4.content.LocalBroadcastManager;
 import android.util.SparseBooleanArray;
 import android.view.View;
 import android.widget.ArrayAdapter;
@@ -22,7 +24,7 @@ import java.util.Set;
 public class DialogUtil{
 
 
-    public static void choiseWiFiSpotsDialog(Activity activity, final String[] arraySpots) {
+    public static void choiseWiFiSpotsDialog(final Activity activity, final String[] arraySpots) {
 
         final AlertDialog alertDialog = new AlertDialog.Builder(activity).create();
         alertDialog.setTitle(activity.getString(R.string.dialog_get_wifi));
@@ -53,6 +55,7 @@ public class DialogUtil{
                     }
                 }
                 QuietApp.getInstans().addTrigersWiFi(selected);
+                LocalBroadcastManager.getInstance(activity.getApplicationContext()).sendBroadcast(new Intent(QuietApp.event_update));
                 alertDialog.dismiss();
             }
         });

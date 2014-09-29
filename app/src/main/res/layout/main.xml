@@ -1,51 +1,56 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              android:orientation="vertical"
-              android:layout_width="fill_parent"
-              android:layout_height="fill_parent"
-              android:background="@drawable/background">
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#ffffff"
+    android:orientation="vertical">
 
-    <TextView
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/choosed"
-            android:layout_margin="20dp"
-            android:padding="8dp"
-            android:textSize="18sp"
-            android:textColor="@android:color/black"
-            android:text="@string/trigers_wifi_text"
-            android:background="@drawable/item_settings"
-            />
-
-
-    <TextView
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/time"
-            android:layout_marginTop="0dp"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
-            android:layout_marginBottom="20dp"
-            android:padding="8dp"
-            android:textSize="18sp"
-            android:textColor="@android:color/black"
-            android:text="@string/trigers_time_text"
-            android:background="@drawable/item_settings"
-            />
+    <Button
+        android:id="@+id/choosed"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="12dp"
+        android:background="@drawable/item_settings"
+        android:padding="8dp"
+        android:text="@string/trigers_wifi_text"
+        android:textColor="@android:color/white"
+        android:gravity="left"
+        android:drawableRight="@drawable/wifi"
+        android:textSize="18sp" />
 
 
-    <TextView
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="0dp"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
-            android:layout_marginBottom="20dp"
-            android:padding="8dp"
-            android:textSize="18sp"
-            android:textColor="@android:color/black"
-            android:text="@string/trigers_gps_text"
-            android:background="@drawable/item_settings"
-            />
+    <Button
+        android:id="@+id/time"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="12dp"
+        android:layout_marginLeft="12dp"
+        android:layout_marginRight="12dp"
+        android:layout_marginTop="0dp"
+        android:background="@drawable/item_settings"
+        android:padding="8dp"
+        android:text="@string/trigers_time_text"
+        android:textColor="@android:color/white"
+        android:gravity="left"
+        android:drawableRight="@drawable/time"
+        android:textSize="18sp" />
+
+
+    <Button
+        android:id="@+id/gps"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="12dp"
+        android:layout_marginLeft="12dp"
+        android:layout_marginRight="12dp"
+        android:layout_marginTop="0dp"
+        android:background="@drawable/item_settings"
+        android:padding="8dp"
+        android:text="@string/trigers_gps_text"
+        android:textColor="@android:color/white"
+        android:gravity="left"
+        android:drawableRight="@drawable/gps"
+
+        android:textSize="18sp" />
 </LinearLayout>
 

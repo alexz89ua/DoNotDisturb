@@ -14,6 +14,7 @@ public class QuietApp extends Application {
 
     private static QuietApp self;
     private SharedPreferences sharedPreferences;
+    public static final String event_update = "com.alexz.donotdisturb.event_update";
 
 
 
