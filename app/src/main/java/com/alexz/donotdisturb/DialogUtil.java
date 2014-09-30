@@ -35,10 +35,10 @@ public class DialogUtil{
         spots.setAdapter(adapter);
         spots.setChoiceMode(ListView.CHOICE_MODE_MULTIPLE);
 
-        Set<String> trigers = QuietApp.getInstans().getTrigersWiFi();
+        Set<String> triggers = QuietApp.getInstans().getTrigersWiFi();
         final int count = spots.getCount();
         for (int i = 0; i < count; i++){
-            if (trigers.contains(arraySpots[i])) {
+            if (triggers.contains(arraySpots[i])) {
                 spots.setItemChecked(i, true);
             }
         }
@@ -107,7 +107,7 @@ public class DialogUtil{
                 int min = 0;
                 String timeFrom = QuietApp.getInstans().getTimeFrom();
                 hour = Integer.parseInt(timeFrom.substring(0, 2));
-                min = Integer.parseInt(timeFrom.substring(3, 4));
+                min = Integer.parseInt(timeFrom.substring(3, timeFrom.length()));
 
                 TimePickerDialog tpd = new TimePickerDialog(activity, fromCallBack, hour, min, true);
                 tpd.show();
@@ -122,7 +122,7 @@ public class DialogUtil{
                 int min = 0;
                 String timeTo = QuietApp.getInstans().getTimeTo();
                 hour = Integer.parseInt(timeTo.substring(0, 2));
-                min = Integer.parseInt(timeTo.substring(3, 4));
+                min = Integer.parseInt(timeTo.substring(3, timeTo.length()));
 
                 TimePickerDialog tpd = new TimePickerDialog(activity, toCallBack, hour, min, true);
                 tpd.show();
@@ -144,6 +144,7 @@ public class DialogUtil{
                     TimeUtil.disableTime(activity, ExtraUtils.TIME_FROM);
                     TimeUtil.disableTime(activity, ExtraUtils.TIME_TO);
                 }
+                LocalBroadcastManager.getInstance(activity.getApplicationContext()).sendBroadcast(new Intent(QuietApp.event_update));
                 alertDialog.dismiss();
             }
         });

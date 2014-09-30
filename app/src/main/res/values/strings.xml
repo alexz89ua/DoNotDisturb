@@ -5,5 +5,5 @@
     <string name="dialog_set_time">Set time</string>
     <string name="trigger_wifi_text">Turn off the sound when connected to a WiFi spots:\n %s</string>
     <string name="trigger_gps_text">Turn off the sound when you are in the area of ​​GPS: \n Coming soon</string>
-    <string name="trigger_time_text">Turn the sound off when the set time comes: \n Coming soon</string>
+    <string name="trigger_time_text">Turn the sound off when the set time comes: \n from %1$s to %2$s</string>
 </resources>

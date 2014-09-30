@@ -102,6 +102,9 @@ public class SettingsActivity extends Activity implements View.OnClickListener {
                         QuietApp.getInstans().getTrigersWiFi())
                         .replaceAll("\\[", "")
                         .replaceAll("\\]", ""));
+        timeCase.setText(
+                String.format(getResources().getString(R.string.trigger_time_text),
+                        QuietApp.getInstans().getTimeFrom(), QuietApp.getInstans().getTimeTo()));
     }
 
 

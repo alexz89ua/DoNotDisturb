@@ -2,7 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:background="#ffffff"
+    android:background="#000000"
     android:orientation="vertical">
 
     <Button
@@ -16,6 +16,8 @@
         android:textColor="@android:color/white"
         android:gravity="left"
         android:drawableRight="@drawable/wifi"
+        android:drawablePadding="10dp"
+        android:drawingCacheQuality="auto"
         android:textSize="18sp" />
 
 
@@ -33,6 +35,8 @@
         android:textColor="@android:color/white"
         android:gravity="left"
         android:drawableRight="@drawable/time"
+        android:drawablePadding="10dp"
+        android:drawingCacheQuality="auto"
         android:textSize="18sp" />
 
 
@@ -50,7 +54,8 @@
         android:textColor="@android:color/white"
         android:gravity="left"
         android:drawableRight="@drawable/gps"
-
+        android:drawablePadding="10dp"
+        android:drawingCacheQuality="auto"
         android:textSize="18sp" />
 </LinearLayout>
 
