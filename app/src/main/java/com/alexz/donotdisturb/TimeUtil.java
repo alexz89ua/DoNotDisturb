@@ -5,6 +5,7 @@ import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
+import android.os.SystemClock;
 import android.util.Log;
 
 import java.text.SimpleDateFormat;
@@ -20,12 +21,9 @@ public class TimeUtil {
 
         Intent intent = new Intent(context, QuietReceiver.class);
         intent.setAction(timeType);
-        PendingIntent sender = PendingIntent.getBroadcast(context, 1, intent, PendingIntent.FLAG_UPDATE_CURRENT);
-        AlarmManager alarmManager = (AlarmManager) context.getSystemService(Context.ALARM_SERVICE);
 
-        if (alarmManager != null) {
-            alarmManager.cancel(sender);
-        }
+        PendingIntent sender = PendingIntent.getBroadcast(context, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT);
+        AlarmManager alarmManager = (AlarmManager) context.getSystemService(Context.ALARM_SERVICE);
 
         Calendar cal = Calendar.getInstance();
         String storedTimeTo;
@@ -43,7 +41,8 @@ public class TimeUtil {
 
 
         long time = cal.getTimeInMillis();
-        alarmManager.setRepeating(AlarmManager.ELAPSED_REALTIME, time, AlarmManager.INTERVAL_DAY, sender);
+        alarmManager.setInexactRepeating(AlarmManager.RTC_WAKEUP,
+                time, AlarmManager.INTERVAL_DAY, sender);
     }
 
     public static void disableTime(Context context, String timeType) {
@@ -51,7 +50,8 @@ public class TimeUtil {
 
         Intent intent = new Intent(context, QuietReceiver.class);
         intent.setAction(timeType);
-        PendingIntent sender = PendingIntent.getBroadcast(context, 1, intent, PendingIntent.FLAG_UPDATE_CURRENT);
+
+        PendingIntent sender = PendingIntent.getBroadcast(context, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT);
         AlarmManager alarmManager = (AlarmManager) context.getSystemService(Context.ALARM_SERVICE);
 
         if (alarmManager != null) {

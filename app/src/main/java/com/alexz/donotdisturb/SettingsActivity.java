@@ -9,13 +9,10 @@ import android.net.wifi.WifiConfiguration;
 import android.net.wifi.WifiManager;
 import android.os.Bundle;
 import android.support.v4.content.LocalBroadcastManager;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
-import android.widget.TextView;
-import android.widget.Toast;
 
 import com.alexz.donotdisturb.utils.RippleDrawable;
 
@@ -57,7 +54,6 @@ public class SettingsActivity extends Activity implements View.OnClickListener {
 
 
     public boolean onCreateOptionsMenu(Menu menu) {
-        menu.add(0, 0, 0, "Info");
         return super.onCreateOptionsMenu(menu);
     }
 
@@ -102,7 +98,7 @@ public class SettingsActivity extends Activity implements View.OnClickListener {
 
     private void initUserSettings(){
         tvChoosedSpots.setText(
-                String.format(getResources().getString(R.string.trigers_wifi_text),
+                String.format(getResources().getString(R.string.trigger_wifi_text),
                         QuietApp.getInstans().getTrigersWiFi())
                         .replaceAll("\\[", "")
                         .replaceAll("\\]", ""));

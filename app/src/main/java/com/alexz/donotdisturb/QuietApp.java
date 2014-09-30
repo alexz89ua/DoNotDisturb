@@ -4,19 +4,23 @@ import android.app.Application;
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
 
+import org.acra.ACRA;
+import org.acra.annotation.ReportsCrashes;
+
 import java.util.HashSet;
 import java.util.Set;
 
 /**
  * Created by AlexZ on 01.07.14.
  */
+
+@ReportsCrashes(formUri = "http://acra-server.dev.stfalcon.com/crash/add", formKey = "")
+
 public class QuietApp extends Application {
 
     private static QuietApp self;
     private SharedPreferences sharedPreferences;
     public static final String event_update = "com.alexz.donotdisturb.event_update";
-
-
 
     synchronized public static QuietApp getInstans(){
         return self;
@@ -25,9 +29,12 @@ public class QuietApp extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
-        synchronized (QuietApp.class) {
             self = this;
+
+        if (!BuildConfig.DEBUG) {
+            ACRA.init(this);
         }
+
         sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
     }
 

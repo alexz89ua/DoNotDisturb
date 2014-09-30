@@ -61,7 +61,6 @@ public class DialogUtil{
         });
 
         alertDialog.setView(viewWiFiDialog);
-        alertDialog.setIcon(R.drawable.ic_launcher);
         alertDialog.show();
     }
 
@@ -71,7 +70,7 @@ public class DialogUtil{
     public static void choiseTimeDialog(final Activity activity) {
 
         final AlertDialog alertDialog = new AlertDialog.Builder(activity).create();
-        alertDialog.setTitle(activity.getString(R.string.dialog_get_wifi));
+        alertDialog.setTitle(activity.getString(R.string.dialog_set_time));
 
         View viewTimeDialog = activity.getLayoutInflater().inflate(R.layout.time_dialog, null);
         final Switch activated = (Switch) viewTimeDialog.findViewById(R.id.switch1);
@@ -150,7 +149,6 @@ public class DialogUtil{
         });
 
         alertDialog.setView(viewTimeDialog);
-        alertDialog.setIcon(R.drawable.ic_launcher);
         alertDialog.show();
     }
 

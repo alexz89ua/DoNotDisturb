@@ -30,4 +30,5 @@ repositories {
 dependencies {
     compile 'com.android.support:support-v4:20.0.+'
     compile 'com.nineoldandroids:library:2.4.0'
+    compile 'ch.acra:acra:4.5.0'
 }
