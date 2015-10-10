@@ -99,12 +99,12 @@ public class SettingsActivity extends Activity implements View.OnClickListener {
     private void initUserSettings(){
         tvChoosedSpots.setText(
                 String.format(getResources().getString(R.string.trigger_wifi_text),
-                        QuietApp.getInstans().getTrigersWiFi())
+                        QuietApp.getInstance().getTrigersWiFi())
                         .replaceAll("\\[", "")
                         .replaceAll("\\]", ""));
         timeCase.setText(
                 String.format(getResources().getString(R.string.trigger_time_text),
-                        QuietApp.getInstans().getTimeFrom(), QuietApp.getInstans().getTimeTo()));
+                        QuietApp.getInstance().getTimeFrom(), QuietApp.getInstance().getTimeTo()));
     }
 
 

@@ -35,7 +35,7 @@ public class DialogUtil{
         spots.setAdapter(adapter);
         spots.setChoiceMode(ListView.CHOICE_MODE_MULTIPLE);
 
-        Set<String> triggers = QuietApp.getInstans().getTrigersWiFi();
+        Set<String> triggers = QuietApp.getInstance().getTrigersWiFi();
         final int count = spots.getCount();
         for (int i = 0; i < count; i++){
             if (triggers.contains(arraySpots[i])) {
@@ -54,7 +54,7 @@ public class DialogUtil{
                         selected.add(arraySpots[i]);
                     }
                 }
-                QuietApp.getInstans().addTrigersWiFi(selected);
+                QuietApp.getInstance().addTrigersWiFi(selected);
                 LocalBroadcastManager.getInstance(activity.getApplicationContext()).sendBroadcast(new Intent(QuietApp.event_update));
                 alertDialog.dismiss();
             }
@@ -76,15 +76,15 @@ public class DialogUtil{
         final Switch activated = (Switch) viewTimeDialog.findViewById(R.id.switch1);
         final TextView from = (TextView) viewTimeDialog.findViewById(R.id.time_from);
         final TextView to = (TextView) viewTimeDialog.findViewById(R.id.time_to);
-        activated.setChecked(QuietApp.getInstans().getTimeEnabled());
-        from.setText(QuietApp.getInstans().getTimeFrom());
-        to.setText(QuietApp.getInstans().getTimeTo());
+        activated.setChecked(QuietApp.getInstance().getTimeEnabled());
+        from.setText(QuietApp.getInstance().getTimeFrom());
+        to.setText(QuietApp.getInstance().getTimeTo());
 
         final TimePickerDialog.OnTimeSetListener fromCallBack = new TimePickerDialog.OnTimeSetListener() {
             public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
                 String timeFrom = intValueToStringWithPrefix(hourOfDay) + ":"
                         + intValueToStringWithPrefix(minute);
-                QuietApp.getInstans().setTimeFrom(timeFrom);
+                QuietApp.getInstance().setTimeFrom(timeFrom);
                 from.setText(timeFrom);
             }
         };
@@ -93,7 +93,7 @@ public class DialogUtil{
             public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
                 String timeTo = intValueToStringWithPrefix(hourOfDay) + ":"
                         + intValueToStringWithPrefix(minute);
-                QuietApp.getInstans().setTimeTo(timeTo);
+                QuietApp.getInstance().setTimeTo(timeTo);
                 to.setText(timeTo);
             }
         };
@@ -105,7 +105,7 @@ public class DialogUtil{
             public void onClick(View view) {
                 int hour = 0;
                 int min = 0;
-                String timeFrom = QuietApp.getInstans().getTimeFrom();
+                String timeFrom = QuietApp.getInstance().getTimeFrom();
                 hour = Integer.parseInt(timeFrom.substring(0, 2));
                 min = Integer.parseInt(timeFrom.substring(3, timeFrom.length()));
 
@@ -120,7 +120,7 @@ public class DialogUtil{
             public void onClick(View view) {
                 int hour = 0;
                 int min = 0;
-                String timeTo = QuietApp.getInstans().getTimeTo();
+                String timeTo = QuietApp.getInstance().getTimeTo();
                 hour = Integer.parseInt(timeTo.substring(0, 2));
                 min = Integer.parseInt(timeTo.substring(3, timeTo.length()));
 
@@ -136,7 +136,7 @@ public class DialogUtil{
         alertDialog.setButton(DialogInterface.BUTTON_POSITIVE, "Ok", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
-                QuietApp.getInstans().setTimeEnabled(activated.isChecked());
+                QuietApp.getInstance().setTimeEnabled(activated.isChecked());
                 if (activated.isChecked()){
                     TimeUtil.setTime(activity, ExtraUtils.TIME_FROM);
                     TimeUtil.setTime(activity, ExtraUtils.TIME_TO);

@@ -33,7 +33,7 @@ public class QuietReceiver extends BroadcastReceiver {
                 WifiInfo wifiInfo = wifiMgr.getConnectionInfo();
                 String name = wifiInfo.getSSID().replaceAll("\"", "");
                 Log.d("WifiReceiver", "Have Wifi Connection: " + name);
-                if (QuietApp.getInstans().getTrigersWiFi().contains(name)) {
+                if (QuietApp.getInstance().getTrigersWiFi().contains(name)) {
                     //For Vibrate mode
                     am.setRingerMode(AudioManager.RINGER_MODE_VIBRATE);
                 }

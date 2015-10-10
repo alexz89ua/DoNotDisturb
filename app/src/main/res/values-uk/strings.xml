@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Keep quiet</string>
+    <string name="dialog_get_wifi">Оберіть WiFi точки</string>
+    <string name="dialog_set_time">Встановити час</string>
+    <string name="trigger_gps_text">Вимкнути звук поблизу точки GPS\n Coming soon</string>
+    <string name="trigger_time_text">Вимкнути звук з %1$s до %2$s</string>
+    <string name="trigger_wifi_text">Вимкнути звук при підєднанні до точок  WiFi:\n %s</string>
+</resources>

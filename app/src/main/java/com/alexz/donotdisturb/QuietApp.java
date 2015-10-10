@@ -4,9 +4,6 @@ import android.app.Application;
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
 
-import org.acra.ACRA;
-import org.acra.annotation.ReportsCrashes;
-
 import java.util.HashSet;
 import java.util.Set;
 
@@ -14,27 +11,20 @@ import java.util.Set;
  * Created by AlexZ on 01.07.14.
  */
 
-@ReportsCrashes(formUri = "http://acra-server.dev.stfalcon.com/crash/add", formKey = "")
-
 public class QuietApp extends Application {
 
     private static QuietApp self;
     private SharedPreferences sharedPreferences;
     public static final String event_update = "com.alexz.donotdisturb.event_update";
 
-    synchronized public static QuietApp getInstans(){
+    synchronized public static QuietApp getInstance(){
         return self;
     }
 
     @Override
     public void onCreate() {
         super.onCreate();
-            self = this;
-
-        if (!BuildConfig.DEBUG) {
-            ACRA.init(this);
-        }
-
+        self = this;
         sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
     }
 

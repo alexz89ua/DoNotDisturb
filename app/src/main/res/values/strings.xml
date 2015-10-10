@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Quiet</string>
+    <string name="app_name">Keep quiet</string>
     <string name="dialog_get_wifi">Choose a WiFi hotspot</string>
     <string name="dialog_set_time">Set time</string>
     <string name="trigger_wifi_text">Turn off the sound when connected to a WiFi spots:\n %s</string>

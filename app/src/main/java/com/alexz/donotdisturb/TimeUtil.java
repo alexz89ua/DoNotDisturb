@@ -1,11 +1,9 @@
 package com.alexz.donotdisturb;
 
 import android.app.AlarmManager;
-import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
-import android.os.SystemClock;
 import android.util.Log;
 
 import java.text.SimpleDateFormat;
@@ -28,9 +26,9 @@ public class TimeUtil {
         Calendar cal = Calendar.getInstance();
         String storedTimeTo;
         if (timeType.equals(ExtraUtils.TIME_FROM)) {
-            storedTimeTo = QuietApp.getInstans().getTimeFrom();
+            storedTimeTo = QuietApp.getInstance().getTimeFrom();
         } else {
-            storedTimeTo = QuietApp.getInstans().getTimeTo();
+            storedTimeTo = QuietApp.getInstance().getTimeTo();
         }
         Log.i("Loger", "Time " + storedTimeTo);
         cal.set(Calendar.HOUR_OF_DAY, Integer.valueOf(storedTimeTo.substring(0, storedTimeTo.lastIndexOf(":"))));
