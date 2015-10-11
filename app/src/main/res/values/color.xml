@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="background_color">#1d0d4e</color>
+    <color name="primary">#1d0d4e</color>
+    <color name="primary_dark">#140935</color>
+    <color name="accent">#c42880</color>
+    <color name="white">#ffffff</color>
     <color name="hint_transparent">#ff5b5b5b</color>
     <color name="hint_color">#8a877f</color>
     <color name="material_blue">#ff0fb5cb</color>
