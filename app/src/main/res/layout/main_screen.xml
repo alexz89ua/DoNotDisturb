@@ -15,44 +15,10 @@
         android:text="About option text..."/>
 
 
-    <LinearLayout
-        android:id="@+id/option_menu"
-        android:gravity="center_horizontal"
+    <com.alexz.donotdisturb.ui.view.MenuWheelView
+        android:clickable="true"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
-        <View
-            android:layout_width="36dp"
-            android:layout_height="36dp"
-            android:layout_margin="16dp"
-            android:background="@drawable/menu_circle"/>
-
-        <View
-            android:layout_width="36dp"
-            android:layout_height="36dp"
-            android:layout_margin="16dp"
-            android:background="@drawable/menu_circle"/>
-
-        <View
-            android:layout_width="36dp"
-            android:layout_height="36dp"
-            android:layout_margin="16dp"
-            android:background="@drawable/menu_circle"/>
-
-        <View
-            android:layout_width="36dp"
-            android:layout_height="36dp"
-            android:layout_margin="16dp"
-            android:background="@drawable/menu_circle"/>
-
-        <View
-            android:layout_width="36dp"
-            android:layout_height="36dp"
-            android:layout_margin="16dp"
-            android:background="@drawable/menu_circle"/>
-
-    </LinearLayout>
+        android:layout_height="wrap_content"/>
 
 
     

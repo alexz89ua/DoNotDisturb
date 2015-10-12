@@ -1,4 +1,4 @@
-package com.alexz.donotdisturb;
+package com.alexz.donotdisturb.ui;
 
 import android.app.Activity;
 import android.content.BroadcastReceiver;
@@ -14,11 +14,14 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 
+import com.alexz.donotdisturb.DialogUtil;
+import com.alexz.donotdisturb.QuietApp;
+import com.alexz.donotdisturb.R;
 import com.alexz.donotdisturb.utils.RippleDrawable;
 
 import java.util.List;
 
-public class SettingsActivity extends Activity implements View.OnClickListener {
+public class MainActivity extends Activity implements View.OnClickListener {
 
 
     private WifiManager mainWifi;
@@ -49,6 +52,7 @@ public class SettingsActivity extends Activity implements View.OnClickListener {
         RippleDrawable.createRipple(timeCase, getResources().getColor(R.color.material_blue));
         tvGps = (Button) findViewById(R.id.gps);
         RippleDrawable.createRipple(tvGps, getResources().getColor(R.color.material_blue));
+        tvGps.setOnClickListener(this);
         initUserSettings();
     }
 
@@ -117,6 +121,9 @@ public class SettingsActivity extends Activity implements View.OnClickListener {
                 break;
             case R.id.time:
                 DialogUtil.choiseTimeDialog(this);
+                break;
+            case R.id.gps:
+                startActivity(new Intent(MainActivity.this, TestUIActivity.class));
                 break;
         }
     }

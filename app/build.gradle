@@ -35,4 +35,5 @@ dependencies {
     compile 'com.nineoldandroids:library:2.4.0'
     compile 'com.android.support:design:22.2.0'
     compile "com.android.support:appcompat-v7:22.0.+"
+    compile "com.andkulikov:transitionseverywhere:1.6.0"
 }
