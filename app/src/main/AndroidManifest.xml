@@ -27,7 +27,8 @@
                 </intent-filter>
             </activity>
 
-            <activity android:name=".ui.TestUIActivity"/>
+            <activity android:name=".ui.TestUIActivity"
+                android:screenOrientation="portrait"/>
 
             <!-- Receive Wi-Fi connection state changes -->
             <receiver android:name=".QuietReceiver">
