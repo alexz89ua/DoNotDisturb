@@ -32,8 +32,9 @@ repositories {
 
 dependencies {
     compile 'com.android.support:support-v4:22.0.+'
+    compile 'com.android.support:recyclerview-v7:22.0.0'
     compile 'com.nineoldandroids:library:2.4.0'
-    compile 'com.android.support:design:22.2.0'
+    compile 'com.github.rey5137:material:1.2.1'
     compile "com.android.support:appcompat-v7:22.0.+"
     compile "com.andkulikov:transitionseverywhere:1.6.0"
 }

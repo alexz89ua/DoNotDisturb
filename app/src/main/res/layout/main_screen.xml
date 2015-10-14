@@ -1,26 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:animateLayoutChanges="true"
     android:background="@color/background_color"
     android:orientation="vertical">
 
-    <TextView
+    <TextSwitcher
         android:id="@+id/about_option"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="16dp"
-        android:textSize="18sp"
-        android:gravity="center"
-        android:text="About option text..."/>
+        android:layout_gravity="center"
+        android:layout_margin="26dp" />
 
 
     <com.alexz.donotdisturb.ui.view.MenuWheelView
-        android:clickable="true"
+        android:id="@+id/wheel_menu"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/about_option"
+        android:clickable="true" />
 
 
-    
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/wheel_menu" />
 
-</LinearLayout>
+    <com.rey.material.widget.FloatingActionButton
+        android:id="@+id/add_button"
+        android:layout_width="56dp"
+        android:layout_height="56dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="8dp"
+        app:fab_backgroundColor="@color/accent"
+        app:fab_elevation="4dp"
+        app:fab_iconSrc="@drawable/ic_add_white_48dp" />
+</RelativeLayout>

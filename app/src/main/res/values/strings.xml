@@ -6,4 +6,7 @@
     <string name="trigger_wifi_text">Turn off the sound when connected to a WiFi spots:\n %s</string>
     <string name="trigger_gps_text">Turn off the sound when you are in the area of ​​GPS: \n Coming soon</string>
     <string name="trigger_time_text">Turn the sound off when the set time comes: \n from %1$s to %2$s</string>
+    <string name="about_wifi_text">When connecting to any network device from the list below will activate silent mode</string>
+    <string name="about_clock_text">At any time you have added to the list below device will activate silent mode</string>
+    <string name="about_gps_text">When approaching any GPS point you have added to the list below device will activate silent mode</string>
 </resources>

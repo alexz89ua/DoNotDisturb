@@ -6,4 +6,7 @@
     <string name="trigger_gps_text">Выключить звук поблизости GPS точки: \n Coming soon</string>
     <string name="trigger_time_text">Выключить звук с  %1$s до %2$s</string>
     <string name="trigger_wifi_text">Выключать звук при подключении к точкам WiFi:\n %s</string>
+    <string name="about_wifi_text">При подключении к любой сети из списка ниже девайс включит беззвучный режим</string>
+    <string name="about_clock_text">В любой период времени который вы добавили в список ниже девайс включит беззвучный режим</string>
+    <string name="about_gps_text">При приближении к любой GPS точке которую вы добавили в список ниже девайс включит беззвучный режим</string>
 </resources>

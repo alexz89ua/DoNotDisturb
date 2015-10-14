@@ -23,7 +23,10 @@ import java.util.ArrayList;
  */
 public class MenuWheelView extends RelativeLayout implements View.OnClickListener {
 
-    private int CURRENT_POSITION = 1;
+    public static final int WIFI = 0;
+    public static final int CLOCK = 1;
+    public static final int GPS = 2;
+    private int CURRENT_POSITION = CLOCK;
 
     private ViewGroup sceneRoot;
     private Scene sceneCenter, sceneLeft, sceneRight;
@@ -33,6 +36,7 @@ public class MenuWheelView extends RelativeLayout implements View.OnClickListene
     private ArrayList<Scene> allScene = new ArrayList<Scene>();
     private static final int SWIPE_THRESHOLD = 30;
     private static final int SWIPE_VELOCITY_THRESHOLD = 30;
+    private WheelItemListener callback;
 
     public MenuWheelView(Context context) {
         super(context);
@@ -58,9 +62,11 @@ public class MenuWheelView extends RelativeLayout implements View.OnClickListene
         sceneLeft = Scene.getSceneForLayout(sceneRoot, R.layout.scene_left, context);
         sceneRight = Scene.getSceneForLayout(sceneRoot, R.layout.scene_right, context);
 
-        allScene.add(0, sceneRight);
-        allScene.add(1, sceneCenter);
-        allScene.add(2, sceneLeft);
+        initClickListeners(sceneRoot);
+
+        allScene.add(WIFI, sceneRight);
+        allScene.add(CLOCK, sceneCenter);
+        allScene.add(GPS, sceneLeft);
 
         linearLayoutTouch = (LinearLayout) findViewById(R.id.touch);
         linearLayoutTouch.setClickable(true);
@@ -81,9 +87,40 @@ public class MenuWheelView extends RelativeLayout implements View.OnClickListene
         mDetector = new GestureDetector(context, new GestureListener());
     }
 
+    public void setOnItemSelectListener(WheelItemListener callback) {
+        this.callback = callback;
+    }
+
+    private void initClickListeners(ViewGroup sceneRoot) {
+        sceneRoot.findViewById(R.id.item1).setOnClickListener(this);
+        sceneRoot.findViewById(R.id.item2).setOnClickListener(this);
+        sceneRoot.findViewById(R.id.item3).setOnClickListener(this);
+    }
+
     @Override
     public void onClick(View view) {
+        switch (view.getId()){
+            case R.id.item1:
+                TransitionManager.go(sceneLeft, set);
+                onItemSelected(WIFI);
+                break;
 
+            case R.id.item2:
+                TransitionManager.go(sceneCenter, set);
+                onItemSelected(CLOCK);
+                break;
+
+            case R.id.item3:
+                TransitionManager.go(sceneRight, set);
+                onItemSelected(GPS);
+                break;
+        }
+    }
+
+    private void onItemSelected(int item){
+        if (callback != null){
+            callback.onItemSelected(item);
+        }
     }
 
 
@@ -118,6 +155,7 @@ public class MenuWheelView extends RelativeLayout implements View.OnClickListene
         if (CURRENT_POSITION > 0) {
             CURRENT_POSITION--;
             TransitionManager.go(allScene.get(CURRENT_POSITION), set);
+            onItemSelected(CURRENT_POSITION);
         }
     }
 
@@ -125,7 +163,14 @@ public class MenuWheelView extends RelativeLayout implements View.OnClickListene
         if (CURRENT_POSITION < 2) {
             CURRENT_POSITION++;
             TransitionManager.go(allScene.get(CURRENT_POSITION), set);
+            onItemSelected(CURRENT_POSITION);
         }
+    }
+
+
+    public interface WheelItemListener {
+
+        public void onItemSelected(int item);
     }
 
 }
